@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: wheat;
+}
+
+.paragraph {
+  font-size: 35px;
+  /*Devido ao mesmo fator da resolução da tela que eu menciono no width da classe item, eu tive que aumentar
+  um pouco mais a fonte do que o proposto na resolução do exercício */
+}
+
+.header {
+  flex-basis: 100%;
+  /* Não há muita diferença entre a flexis-base e o width padrão, mas por boas práticas a gente acaba utilizando 
+      o flexis-base quando estamos utilizando um item direto no container */ /* O flex basis acaba fazendo mais diferença quando 
+      está sendo utilizado junto com o flex: grow ou shrink */
+  padding: 10px;
+  /* Eu particularmente esqueceria de usar o padding aqui e ia ficar quebrando a cabeça pra lembrar */
+  background-color: blue;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  /* Aqui o display flex pra poder centralizar o título */
+}
+
+.main-content {
+  flex: 1 0 400px;
+  /* Aqui colocando 400px fica muito próximo da resolução da tela do computador, por isso que não aparece barra de rolagem
+      Mas se colocar uns 600, aí já passa do tamanho da tela do computador e aí a gente já passa a ter a barra de rolagem */
+  padding: 20px;
+  /* Os itens estão bem colados com o header e com a parede, a gente coloca esse padding geral pra dar um espaço nos quatro lados dos quadrados */
+  display: flex;
+  /* Aqui que eu preciso entender um pouco melhor depois como que funciona, pois quando a gente coloca o flex
+      os itens ficam em linha na visualização */
+  flex-wrap: wrap;
+  /* O flex wrap é que faz eles se agruparem um em cima do outro igual percebemos no modelo do exercício */
+  gap: 10px;
+  /*align-items: center;*/
+  justify-content: center;
+  align-content: center;
+  /* Aqui ele coloca o align-content, que ele não tinha mostrado ainda. Serve pra centralizar e praticamente substitui o align-items
+  nesse caso. O align-items coloca os itens mais próximos das paredes, enquanto esse aqui deixa bem no centro mesmo */
+}
+
+.item {
+  width: 380px;
+  /*Se deixar na largura que o instrutor colocou, na resolução da minha tela ficam 4 itens em cima e dois embaixo
+  Aí deixei em 380 pra aumentar um pouquinho e ficar igual o do proposto inicialmente: três itens em cima e três embaixo */
+  height: 290px;
+  /* Em até 290px a barra de rolagem ainda não é ativada na resolução do meu monitor
+  Aí passou disso ela já é ativada */
+  background-color: darkcyan;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer {
+  flex-basis: 100%;
+
+  padding: 10px;
+
+  background-color: blue;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+}
